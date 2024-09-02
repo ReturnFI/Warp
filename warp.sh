@@ -326,7 +326,6 @@ Generate_WGCF_Profile() {
         log INFO "WARP WireGuard profile (wgcf-profile.conf) generation in progress..."
         wgcf generate
     done
-    Uninstall_wgcf
 }
 
 Backup_WGCF_Profile() {
