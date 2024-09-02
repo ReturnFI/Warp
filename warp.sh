@@ -369,13 +369,13 @@ Install_WireGuardTools_Debian() {
         ;;
     esac
     apt update
-    apt install iproute2 openresolv -y
+    apt install iproute2 -y
     apt install wireguard-tools --no-install-recommends -y
 }
 
 Install_WireGuardTools_Ubuntu() {
     apt update
-    apt install iproute2 openresolv -y
+    apt install iproute2 -y
     apt install wireguard-tools --no-install-recommends -y
 }
 
