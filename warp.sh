@@ -304,7 +304,7 @@ Print_Delimiter() {
 }
 
 Install_wgcf() {
-    curl -fsSL git.io/wgcf.sh | bash
+    curl -fsSL https://raw.githubusercontent.com/ReturnFI/Warp/main/wgcf.sh | bash
 }
 
 Uninstall_wgcf() {
