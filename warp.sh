@@ -146,6 +146,7 @@ Install_Requirements_Debian() {
     fi
     if [[ ! $(apt list 2>/dev/null | grep apt-transport-https | grep installed) ]]; then
         apt update
+        apt install resolvconf
         apt install apt-transport-https -y
     fi
 }
@@ -172,6 +173,7 @@ Install_WARP_Client_Debian() {
     curl https://pkg.cloudflareclient.com/pubkey.gpg | gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg
     echo "deb [arch=amd64 signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ ${SysInfo_OS_CodeName} main" | tee /etc/apt/sources.list.d/cloudflare-client.list
     apt update
+    apt install resolvconf
     apt install cloudflare-warp -y
 }
 
@@ -370,12 +372,14 @@ Install_WireGuardTools_Debian() {
     esac
     apt update
     apt install iproute2 -y
+    apt install resolvconf -y
     apt install wireguard-tools --no-install-recommends -y
 }
 
 Install_WireGuardTools_Ubuntu() {
     apt update
     apt install iproute2 -y
+    apt install resolvconf -y
     apt install wireguard-tools --no-install-recommends -y
 }
 
