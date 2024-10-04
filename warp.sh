@@ -386,6 +386,9 @@ Install_WireGuardTools_Ubuntu() {
 Install_WireGuardTools_CentOS() {
     yum install epel-release -y || yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-${SysInfo_OS_Ver_major}.noarch.rpm -y
     yum install iproute iptables wireguard-tools -y
+    systemctl enable systemd-resolved
+    systemctl start systemd-resolved
+
 }
 
 Install_WireGuardTools_Fedora() {
