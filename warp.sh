@@ -393,6 +393,8 @@ Install_WireGuardTools_CentOS() {
 
 Install_WireGuardTools_Fedora() {
     dnf install iproute iptables wireguard-tools -y
+    systemctl enable systemd-resolved
+    systemctl start systemd-resolved
 }
 
 Install_WireGuardTools_Arch() {
