@@ -54,17 +54,17 @@ uninstall       uninstall Cloudflare WARP Official Linux Client
 restart         Restart Cloudflare WARP Official Linux Client
 proxy           Enable WARP Client Proxy Mode (default SOCKS5 port: 40000)
 unproxy         Disable WARP Client Proxy Mode
+masque          Set WARP tunnel protocol to MASQUE (HTTP/3)
 wg              Install WireGuard and related components
-wg4             Configuration WARP IPv4 Global Network (with WireGuard), all IPv4 outbound data over the WARP network
-wg6             Configuration WARP IPv6 Global Network (with WireGuard), all IPv6 outbound data over the WARP network
-wgd             Configuration WARP Dual Stack Global Network (with WireGuard), all outbound data over the WARP network
-wgx             Configuration WARP Non-Global Network (with WireGuard), set fwmark or interface IP Address to use the WARP network
+wg4             Configuration WARP IPv4 Global Network (with WireGuard)
+wg6             Configuration WARP IPv6 Global Network (with WireGuard)
+wgd             Configuration WARP Dual Stack Global Network (with WireGuard)
+wgx             Configuration WARP Non-Global Network (with WireGuard)
 rwg             Restart WARP WireGuard service
 dwg             Disable WARP WireGuard service
 status          Prints status information
 version         Prints version information
-help            Prints this message or the help of the given subcommand(s)
-menu            Chinese special features menu
+help            Prints this message
 ```
 
 ### Example
@@ -92,7 +92,7 @@ menu            Chinese special features menu
 
 ## License
 
-[MIT](https://github.com/P3TERX/warp.sh/blob/main/LICENSE) © **[P3TERX](https://p3terx.com/)**
+[MIT](https://github.com/P3TERX/warp.sh/blob/main/LICENSE)
 
 ## Notice of Non-Affiliation and Disclaimer
 
