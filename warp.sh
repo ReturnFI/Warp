@@ -235,7 +235,7 @@ Init_WARP_Client() {
     if [[ ${WARP_Client_SelfStart} != enabled || ${WARP_Client_Status} != active ]]; then
         Install_WARP_Client
     fi
-    if [[ $(warp-cli status) = *Unable* ]]; then
+    if [[ $(warp-cli status) = *Missing* ]]; then
         log INFO "Cloudflare WARP Account Registration in progress..."
         warp-cli --accept-tos registration new || true
     fi
