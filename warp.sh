@@ -140,13 +140,22 @@ Install_WARP_Client_Debian() {
             ;;
         esac
     fi
+
+    local repo_codename="${SysInfo_OS_CodeName}"
+
+    if [[ "${repo_codename}" == "trixie" ]]; then
+        log WARN "Debian 13 (trixie) detected. Using Debian 12 (bookworm) repository as a fallback."
+        repo_codename="bookworm"
+    fi
+
     Install_Requirements_Debian
     curl https://pkg.cloudflareclient.com/pubkey.gpg | gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg
-    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ ${SysInfo_OS_CodeName} main" | tee /etc/apt/sources.list.d/cloudflare-client.list
+    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ ${repo_codename} main" | tee /etc/apt/sources.list.d/cloudflare-client.list
     apt update
     apt install resolvconf
     apt install cloudflare-warp -y
 }
+
 
 Install_WARP_Client_CentOS() {
     if [[ ${SysInfo_OS_Ver_major} = 8 ]]; then
