@@ -133,7 +133,7 @@ Install_WARP_Client_Debian() {
         esac
     elif [[ ${SysInfo_OS_Name_lowercase} = debian ]]; then
         case ${SysInfo_OS_CodeName} in
-        bookworm | buster | bullseye) ;;
+        bookworm | buster | bullseye | trixie) ;;
         *)
             log ERROR "This operating system is not supported."
             exit 1
